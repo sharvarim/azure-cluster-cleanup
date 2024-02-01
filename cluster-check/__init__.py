@@ -612,7 +612,9 @@ def get_vmss_ips(subscription_id, resource_group_name, vmss_instances):
 def process_event_grid_notification(event_type, event_data):
 
     logger.debug(f"processing event_type {event_type}  data={event_data}")
-
+    adc = CitrixADC(nsip="10.10.0.4", nspass="xxx")
+    adc.check_connection()
+    
     nspass = "Freebsd123$%^"
 
     operation_name = "default"
