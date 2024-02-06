@@ -1,0 +1,11 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "name": "myTimer",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    }
+  ]
+}
