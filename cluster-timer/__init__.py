@@ -685,7 +685,7 @@ def process_event_grid_notification(event_type, event_data):
         return None
 
 
- def main(myTimer: func.TimerRequest) -> None:
+def main(myTimer: func.TimerRequest) -> None:
 
     logger.debug(f"Timer Event occurred")
 
