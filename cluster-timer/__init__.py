@@ -688,7 +688,9 @@ def process_event_grid_notification(event_type, event_data):
 def main(myTimer: func.TimerRequest) -> None:
 
     logger.debug(f"Timer Event occurred")
-
+    adc = CitrixADC(nsip="10.10.0.4", nspass="xxx")
+    adc.check_connection()
+    return
     try:
         event_data ={
             "operationName" : "Microsoft.Compute/virtualMachines/write",
