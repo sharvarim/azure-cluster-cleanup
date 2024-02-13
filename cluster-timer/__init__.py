@@ -9,6 +9,9 @@ import json
 from ipaddress import IPv4Network, ip_network
 import traceback
 import copy
+from azure.identity import DefaultAzureCredential
+from azure.mgmt.compute import ComputeManagementClient
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
