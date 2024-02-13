@@ -9,6 +9,7 @@ import json
 from ipaddress import IPv4Network, ip_network
 import traceback
 import copy
+from azure.identity import ManagedIdentityCredential
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.compute import ComputeManagementClient
 
@@ -694,11 +695,9 @@ def main(myTimer: func.TimerRequest) -> None:
     adc = CitrixADC(nsip="10.10.0.4", nspass="xxx")
     adc.check_connection()
     sub_id = "4fc50510-428a-4492-90e7-1c0aa1535830"
-
-    client = ComputeManagementClient(
-        credential=DefaultAzureCredential(),
-        subscription_id=sub_id,
-    )
+    credentials = ManagedIdentityCredential()
+    client = ComputeManagementClient(credentials, subscription_id=subscription_id)
+    
     vm_list = client.virtual_machines.list_all()
     logger.debug(f"VMs in RG = {vm_list}")
     return
