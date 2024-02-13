@@ -696,7 +696,7 @@ def main(myTimer: func.TimerRequest) -> None:
     adc.check_connection()
     sub_id = "4fc50510-428a-4492-90e7-1c0aa1535830"
     credentials = ManagedIdentityCredential()
-    client = ComputeManagementClient(credentials, subscription_id=subscription_id)
+    client = ComputeManagementClient(credentials, subscription_id=sub_id)
     
     vm_list = client.virtual_machines.list_all()
     logger.debug(f"VMs in RG = {vm_list}")
