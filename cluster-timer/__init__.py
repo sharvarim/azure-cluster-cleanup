@@ -690,6 +690,14 @@ def main(myTimer: func.TimerRequest) -> None:
     logger.debug(f"Timer Event occurred")
     adc = CitrixADC(nsip="10.10.0.4", nspass="xxx")
     adc.check_connection()
+    sub_id = "4fc50510-428a-4492-90e7-1c0aa1535830"
+
+    client = ComputeManagementClient(
+        credential=DefaultAzureCredential(),
+        subscription_id=sub_id,
+    )
+    vm_list = client.virtual_machines.list_all()
+    logger.debug(f"VMs in RG = {vm_list}")
     return
     try:
         event_data ={
