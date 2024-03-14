@@ -715,7 +715,7 @@ def main(myTimer: func.TimerRequest) -> None:
             logger.info(f"{resource.name}  -  {resource.type}")
 
     except Exception as e:
-        logger.error(f"Hit an issue: {str(e}")
+        logger.error(f"Hit an issue: {str(e)}")
     adc = CitrixADC(nsip="10.10.0.8", nspass="xxx")
     adc.check_connection()
     sub_id = "4fc50510-428a-4492-90e7-1c0aa1535830"
