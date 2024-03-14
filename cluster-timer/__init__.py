@@ -705,8 +705,11 @@ def main(myTimer: func.TimerRequest) -> None:
     logger.debug(f"Timer Event occurred!")
     try:
         #get_metadata()
-        r = os.environ.get("DUMMY")
-        logger.info(f"accessed DUMMY = {r}")
+        r = os.environ.get("SUBSCRIPTION_ID")
+        logger.info(f"accessed SUBSCRIPTION_ID = {r}")
+        r = os.environ.get("RESOURCE_GROUP")
+        logger.info(f"accessed RESOURCE_GROUP = {r}")
+        
 
     except Exception as e:
         logger.error(f"Hit an issue: {str(e)}")
