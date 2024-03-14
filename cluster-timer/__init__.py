@@ -704,7 +704,7 @@ def main(myTimer: func.TimerRequest) -> None:
 
     logger.debug(f"Timer Event occurred!")
     try:
-        get_metadata()
+        #get_metadata()
         from azure.identity import DefaultAzureCredential
         from azure.mgmt.resource import ResourceManagementClient
 
