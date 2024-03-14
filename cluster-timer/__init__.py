@@ -689,6 +689,7 @@ def process_event_grid_notification(event_type, event_data):
         return None
 
 def get_metadata():
+    logger.info("FEtching metadat")
     metadata_url = "http://169.254.169.254/metadata/instance?api-version=2020-06-01"
     headers = {"Metadata": "true"}
     response = requests.get(metadata_url, headers=headers)
@@ -701,7 +702,7 @@ def get_metadata():
 
 def main(myTimer: func.TimerRequest) -> None:
 
-    logger.debug(f"Timer Event occurred")
+    logger.debug(f"Timer Event occurred!")
     get_metadata()
     adc = CitrixADC(nsip="10.10.0.8", nspass="xxx")
     adc.check_connection()
