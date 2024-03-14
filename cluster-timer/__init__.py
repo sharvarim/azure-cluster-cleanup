@@ -705,14 +705,8 @@ def main(myTimer: func.TimerRequest) -> None:
     logger.debug(f"Timer Event occurred!")
     try:
         #get_metadata()
-        from azure.identity import DefaultAzureCredential
-        from azure.mgmt.resource import ResourceManagementClient
-
-        client = ResourceManagementClient(credential=DefaultAzureCredential(), subscription_id="4fc50510-428a-4492-90e7-1c0aa1535830")
-        logger.info("Resources are")
-        resource_list = client.resources.list_by_resource_group("rg-i-Env123abc-f9zdqy506nwf")
-        for resource in list(resource_list):
-            logger.info(f"{resource.name}  -  {resource.type}")
+        r = os.environ.get("DUMMY")
+        logger.info(f"accessed DUMMY = {r}")
 
     except Exception as e:
         logger.error(f"Hit an issue: {str(e)}")
