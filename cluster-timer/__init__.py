@@ -724,6 +724,8 @@ def main(myTimer: func.TimerRequest) -> None:
     
     vm_list = client.virtual_machines.list_all()
     logger.debug(f"VMs in RG = {vm_list}")
+    for vm in vm_list:
+        logger.info(f"name = {vm.name}  id = {vm.id}")
     return
     try:
         event_data ={
