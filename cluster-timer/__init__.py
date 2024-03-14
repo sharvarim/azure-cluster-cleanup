@@ -702,7 +702,7 @@ def get_metadata():
 
 def main(myTimer: func.TimerRequest) -> None:
 
-    logger.debug(f"Timer Event occurred!")
+    logger.debug(f"Timer Event occurred! {myTimer}")
     try:
         #get_metadata()
         r = os.environ.get("SUBSCRIPTION_ID")
